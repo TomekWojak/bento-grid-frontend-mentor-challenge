@@ -21,8 +21,11 @@ img {
 body {
 	font-family: "DM Sans", sans-serif;
 	background-color: #f5f5f5;
+	overflow-x: hidden;
 }
-
+.to-animate {
+	animation: scale 0.7s 1 forwards;
+}
 .bento {
 	&__container {
 		padding: 3em 1em;
@@ -44,9 +47,9 @@ body {
 		display: flex;
 		flex-direction: column;
 		padding: 2em;
+		transform: scale(0.95);
 		border-radius: 8px;
 		overflow: hidden;
-		transition: transform 0.3s;
 
 		&--social {
 			align-items: center;
@@ -63,6 +66,7 @@ body {
 		&--accounts {
 			background-color: $pureWhite;
 			box-shadow: 0 0 10px #2e2e2e15;
+			animation-delay: 0.1s;
 
 			.bento__img {
 				margin-block-end: 2em;
@@ -72,6 +76,7 @@ body {
 		&--yellow-schedule {
 			padding: 2em 2em 0;
 			background-color: $yellow;
+			animation-delay: 0.15s;
 
 			.bento__img {
 				position: relative;
@@ -81,6 +86,7 @@ body {
 		}
 		&--purple-schedule {
 			background-color: $purpleVeryLight;
+			animation-delay: 0.2s;
 			.bento__subtitle {
 				text-align: center;
 			}
@@ -94,6 +100,7 @@ body {
 			align-items: center;
 			text-align: center;
 			color: $pureWhite;
+			animation-delay: 0.1s;
 
 			.bento__img {
 				width: min(70%, 280px);
@@ -103,6 +110,7 @@ body {
 		&--audience {
 			background-color: $pureWhite;
 			box-shadow: 0 0 10px #2e2e2e15;
+			animation-delay: 0.25s;
 
 			.bento__text {
 				text-align: left;
@@ -116,6 +124,7 @@ body {
 			padding: 3em 2em;
 			background-color: $yellowVeryLight;
 			align-items: flex-start;
+			animation-delay: 0.05s;
 
 			.bento__img {
 				margin-block-start: 2em;
@@ -124,6 +133,7 @@ body {
 		}
 		&--ai {
 			background-color: $yellow;
+			animation-delay: 0.27s;
 
 			.bento__img {
 				margin-block-start: 2em;
@@ -324,6 +334,18 @@ body {
 		}
 	}
 }
+@media (1100px <= width) {
+	.bento {
+		&__container {
+			gap: 2.5em;
+		}
+		&__brick {
+			&--ai {
+				margin-block-start: 6.5em;
+			}
+		}
+	}
+}
 @media (1200px <= width) {
 	.bento {
 		&__brick {
@@ -334,5 +356,17 @@ body {
 				}
 			}
 		}
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(0.95);
+	}
+	50% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

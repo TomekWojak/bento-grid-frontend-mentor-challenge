@@ -24,6 +24,11 @@ img {
 body {
   font-family: "DM Sans", sans-serif;
   background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.to-animate {
+  animation: scale 0.7s 1 forwards;
 }
 
 .bento__container {
@@ -46,9 +51,9 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2em;
+  transform: scale(0.95);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s;
 }
 .bento__brick--social {
   align-items: center;
@@ -64,6 +69,7 @@ body {
 .bento__brick--accounts {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 10px rgba(46, 46, 46, 0.0823529412);
+  animation-delay: 0.1s;
 }
 .bento__brick--accounts .bento__img {
   margin-block-end: 2em;
@@ -72,6 +78,7 @@ body {
 .bento__brick--yellow-schedule {
   padding: 2em 2em 0;
   background-color: hsl(39, 100%, 71%);
+  animation-delay: 0.15s;
 }
 .bento__brick--yellow-schedule .bento__img {
   position: relative;
@@ -80,6 +87,7 @@ body {
 }
 .bento__brick--purple-schedule {
   background-color: hsl(254, 88%, 90%);
+  animation-delay: 0.2s;
 }
 .bento__brick--purple-schedule .bento__subtitle {
   text-align: center;
@@ -93,6 +101,7 @@ body {
   align-items: center;
   text-align: center;
   color: hsl(0, 0%, 100%);
+  animation-delay: 0.1s;
 }
 .bento__brick--followers .bento__img {
   width: min(70%, 280px);
@@ -101,6 +110,7 @@ body {
 .bento__brick--audience {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 10px rgba(46, 46, 46, 0.0823529412);
+  animation-delay: 0.25s;
 }
 .bento__brick--audience .bento__text {
   text-align: left;
@@ -113,6 +123,7 @@ body {
   padding: 3em 2em;
   background-color: hsl(31, 66%, 93%);
   align-items: flex-start;
+  animation-delay: 0.05s;
 }
 .bento__brick--post .bento__img {
   margin-block-start: 2em;
@@ -120,6 +131,7 @@ body {
 }
 .bento__brick--ai {
   background-color: hsl(39, 100%, 71%);
+  animation-delay: 0.27s;
 }
 .bento__brick--ai .bento__img {
   margin-block-start: 2em;
@@ -288,9 +300,28 @@ body {
     width: 200px;
   }
 }
+@media (1100px <= width) {
+  .bento__container {
+    gap: 2.5em;
+  }
+  .bento__brick--ai {
+    margin-block-start: 6.5em;
+  }
+}
 @media (1200px <= width) {
   .bento__brick--yellow-schedule .bento__img {
     width: 190px;
     bottom: -6em;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=style.css.map */
