@@ -1,0 +1,110 @@
+@use "./_colors" as *;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+img {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	font-style: italic;
+}
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+body {
+	font-family: "DM Sans", sans-serif;
+}
+
+.bento {
+	&__container {
+		padding: 3em 1em;
+		display: grid;
+		row-gap: 3em;
+		grid-template-columns: 1fr;
+	}
+	&__accent--yellow {
+		color: $yellow;
+	}
+
+	&__brick {
+		display: flex;
+		flex-direction: column;
+		padding: 2em;
+		border-radius: 8px;
+		overflow: hidden;
+
+		&--social {
+			align-items: center;
+			padding: 3em 2em;
+			text-align: center;
+			background-color: $purple;
+			color: $pureWhite;
+
+			.bento__img {
+				margin: 1.8em 0 0.8em;
+				width: 150px;
+			}
+		}
+		&--accounts {
+			background-color: $pureWhite;
+			box-shadow: 0 0 10px #2e2e2e2e;
+
+			.bento__img {
+				margin-block-end: 2em;
+				max-width: 330px;
+			}
+		}
+		&--yellow-schedule {
+			padding: 2em 2em 0;
+			background-color: $yellow;
+
+			.bento__img {
+				position: relative;
+				top: 1.5em;
+				width: 180px;
+			}
+		}
+	}
+	&__title {
+		font-weight: 500;
+
+		&--big {
+			font-size: clamp(3.5rem, 12vw, 5rem);
+			line-height: 90%;
+		}
+	}
+	&__subtitle {
+		max-width: 350px;
+		font-size: clamp(1.7rem, 6vw, 2.4rem);
+		font-weight: 550;
+		line-height: 90%;
+
+		&--black {
+			color: $black;
+		}
+	}
+	&__text {
+		font-size: clamp(1.4rem, 4vw, 1.7rem);
+	}
+}
+
+@media (375px <= width) {
+	.bento {
+		&__brick {
+			&--yellow-schedule {
+				.bento__img {
+					top: 2em;
+					width: 220px;
+				}
+			}
+		}
+	}
+}
